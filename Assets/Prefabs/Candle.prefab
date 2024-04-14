@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 2387161379412561523}
   - component: {fileID: 7440956132547374474}
   - component: {fileID: 2014174961450980655}
+  - component: {fileID: -5281560847081936016}
+  - component: {fileID: 7836298982717193080}
+  - component: {fileID: 2243580635309488384}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -108,6 +111,50 @@ CapsuleCollider:
   m_Height: 0.00080000056
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5281560847081936016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623964726410639049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4408c720aae8e74495b9e53c01fc5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  self: {fileID: 2447697686165251745}
+  distance: 0
+--- !u!114 &7836298982717193080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623964726410639049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d26000cde83c04aa0588f81f3d865c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisTask: {fileID: 2243580635309488384}
+  flame: {fileID: 5714099688821245818}
+  inRange: 0
+  distanceScript: {fileID: -5281560847081936016}
+--- !u!114 &2243580635309488384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623964726410639049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dbf1d4b47784a4daebf63c791cfd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completed: 0
 --- !u!1 &5714099688821245818
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8566295147536783122
 Transform:
   m_ObjectHideFlags: 0

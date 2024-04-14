@@ -12,9 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator playerAnim;
     public bool right;
     private Rigidbody rb;
+    public static PlayerMovement pm;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        pm = this;
         rb = GetComponent<Rigidbody>();
     }
     public void OnMove(InputAction.CallbackContext ctx) => movementInp = ctx.ReadValue<Vector2>();

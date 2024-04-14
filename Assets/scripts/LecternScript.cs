@@ -1,36 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class LecternScript : MonoBehaviour
 {
     public DistanceScript distanceScript;
     public bool isInteractable;
-    public Material unInteractable;
-    public Material Interactable;
-    public Material Interacting;
-    public Material Interacted;
+    public bool inRange;
     public GameObject Lectern;
-
+    public float chantTime;
+    public float completion;
+    private float fill;
+    public Image chantTimer;
+    
     void Update()
     {
+        
         if (distanceScript.distance < 0.8f)
         {
-            isInteractable = true;
-            Lectern.GetComponent<MeshRenderer>().material = Interactable;
+            isInteractable = TaskManager.isAllCompleted();
+            inRange = true;
+// Lectern.GetComponent<MeshRenderer>().material = Interactable;
         }
         else
         {
-            isInteractable = false;
-            Lectern.GetComponent<MeshRenderer>().material = unInteractable;
+            inRange = false;
+          ///  Lectern.GetComponent<MeshRenderer>().material = unInteractable;
         }
+        chantTimer.fillAmount = fill;
+
     }
 
-    void FixedUpdate()
+   public void interacting()
     {
-        if(isInteractable = true && Input.GetButton("Interact"))
+        if (inRange & isInteractable)
         {
-            Lectern.GetComponent<MeshRenderer>().material = Interacting;
+            completion += Time.deltaTime;
+            fill = completion / chantTime;
+            //Lectern.GetComponent<MeshRenderer>().material = Interacting;
         }
     }
+    
 }
