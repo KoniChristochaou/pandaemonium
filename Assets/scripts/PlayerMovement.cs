@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx) => movementInp = ctx.ReadValue<Vector2>();
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (movementInp.x > 0) {
             right = true;
@@ -29,10 +29,11 @@ public class PlayerMovement : MonoBehaviour
         {
             right = false;
         }
-        transform.Translate(new Vector3(movementInp.x,0,movementInp.y)*speed*Time.deltaTime);
+        rb.velocity = new Vector3(movementInp.x,0,movementInp.y).normalized*speed;
         pivotAnim.SetBool("right", right);
         playerAnim.SetBool("Moving", movementInp.sqrMagnitude > 0);
     }
+
 
 
 }
