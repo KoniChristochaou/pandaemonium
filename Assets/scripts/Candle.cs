@@ -8,7 +8,7 @@ public class Candle : MonoBehaviour
     public GameObject flame;
     public bool inRange;
     public DistanceScript distanceScript;
-
+    public AudioClip lightCandle;
     private void Start()
     {
         distanceScript.player = PlayerMovement.pm.gameObject.transform;
@@ -20,10 +20,11 @@ public class Candle : MonoBehaviour
             inRange = distanceScript.distance < 0.8f;
     }
     public void LightCandle() {
-        if (inRange)
+        if (inRange && !thisTask.completed)
         {
             thisTask.completed = true;
             flame.SetActive(true);
+            AudioSource.PlayClipAtPoint(lightCandle, this.transform.position);
         }
     }
 

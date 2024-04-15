@@ -142,6 +142,7 @@ MonoBehaviour:
   flame: {fileID: 5714099688821245818}
   inRange: 0
   distanceScript: {fileID: -5281560847081936016}
+  lightCandle: {fileID: 8300000, guid: 5602db8737bc44549ae91d1edfa3df7e, type: 3}
 --- !u!114 &2243580635309488384
 MonoBehaviour:
   m_ObjectHideFlags: 0

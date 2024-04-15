@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9485d8b9393fcc4a8f49ff21b85a0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interacting: 0
   onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -412,8 +411,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2680632, y: 0.30920005, z: 0.08475045}
-  m_Center: {x: 0, y: 0.14996868, z: 0.009892883}
+  m_Size: {x: 0.15221083, y: 0.22873789, z: 0.08475045}
+  m_Center: {x: -0.00257962, y: 0.109737664, z: 0.00989288}
 --- !u!114 &6697832682656256665
 MonoBehaviour:
   m_ObjectHideFlags: 0

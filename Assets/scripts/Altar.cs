@@ -8,7 +8,7 @@ public class Altar : MonoBehaviour
     public GameObject rune;
     public bool inRange;
     public DistanceScript distanceScript;
-
+    public AudioClip place;
     private void Start()
     {
         distanceScript.player = PlayerMovement.pm.gameObject.transform;
@@ -21,11 +21,12 @@ public class Altar : MonoBehaviour
     }
     public void placeRune()
     {
-        if (inRange && Interactions.instance.hasRune)
+        if (inRange && Interactions.instance.hasRune&& !thisTask.completed)
         {
             thisTask.completed = true;
             rune.SetActive(true);
             Interactions.instance.hasRune = false;
+            AudioSource.PlayClipAtPoint(place, this.transform.position);
         }
     }
 

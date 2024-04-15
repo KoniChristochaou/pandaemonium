@@ -9,6 +9,7 @@ public class Ghost : MonoBehaviour
     public float timeToTroll;
     float timer;
     bool trigger;
+    public AudioClip bark;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,7 @@ public class Ghost : MonoBehaviour
 
     public void doMisdeeds() {
         tsks[Random.Range(0, tsks.Count)].doMischeif();
+        AudioSource.PlayClipAtPoint(bark, this.transform.position);
         anim.ResetTrigger("doMischief");
         trigger = true;
         timer = 0;

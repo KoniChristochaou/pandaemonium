@@ -147,6 +147,7 @@ MonoBehaviour:
   rune: {fileID: 306622079328026173}
   inRange: 0
   distanceScript: {fileID: 5212206966180167640}
+  place: {fileID: 8300000, guid: 5d5ef43117b501b41b0ee0776393e066, type: 3}
 --- !u!65 &9102951524965579436
 BoxCollider:
   m_ObjectHideFlags: 0
