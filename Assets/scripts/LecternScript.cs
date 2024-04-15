@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class LecternScript : MonoBehaviour
 {
     public DistanceScript distanceScript;
@@ -12,10 +13,12 @@ public class LecternScript : MonoBehaviour
     public float completion;
     private float fill;
     public Image chantTimer;
-    
+    public bool win = false;
     void Update()
     {
-        
+        if (!win && fill >= 1) {
+            win = true;
+        }
         if (distanceScript.distance < 0.8f)
         {
             isInteractable = TaskManager.isAllCompleted();
@@ -46,5 +49,9 @@ public class LecternScript : MonoBehaviour
             //Lectern.GetComponent<MeshRenderer>().material = Interacting;
         }
     }
-    
+
+    public IEnumerator winstate() {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("End");
+    }
 }

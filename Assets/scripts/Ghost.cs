@@ -15,7 +15,7 @@ public class Ghost : MonoBehaviour
     {
         trigger = true;
         timer = 0;
-        timeToTroll = Random.Range(5f, 15f);
+        timeToTroll = Random.Range(5f, 12f);
     }
 
     // Update is called once per frame
@@ -51,6 +51,6 @@ public class Ghost : MonoBehaviour
         anim.ResetTrigger("doMischief");
         trigger = true;
         timer = 0;
-        timeToTroll = Random.Range(5f, 15f);
+        timeToTroll = Random.Range(5f, 12f);
     }
 }
