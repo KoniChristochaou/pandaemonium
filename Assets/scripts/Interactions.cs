@@ -6,12 +6,13 @@ using UnityEngine.InputSystem;
 
 public class Interactions : MonoBehaviour
 {
-    public bool interacting;
+    public static bool interacting;
     public UnityEvent onInteract;
     public static Interactions instance;
     public bool hasBone;
     public bool hasRune;
     public GameObject bone;
+    public GameObject rune;
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,6 +28,7 @@ public class Interactions : MonoBehaviour
             onInteract.Invoke();
         }
         bone.SetActive(hasBone);
+        rune.SetActive(hasRune);
     }
 
     public void Interact(InputAction.CallbackContext ctx) => interacting = ctx.ReadValue<float>()>0f;

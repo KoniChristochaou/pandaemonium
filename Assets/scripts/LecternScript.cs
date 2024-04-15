@@ -24,11 +24,16 @@ public class LecternScript : MonoBehaviour
         }
         else
         {
+            CameraShake.stopShakeIndef();
+
             inRange = false;
           ///  Lectern.GetComponent<MeshRenderer>().material = unInteractable;
         }
         chantTimer.fillAmount = fill;
 
+        if (!Interactions.interacting || !isInteractable) {
+            CameraShake.stopShakeIndef();
+        }
     }
 
    public void interacting()
@@ -37,6 +42,7 @@ public class LecternScript : MonoBehaviour
         {
             completion += Time.deltaTime;
             fill = completion / chantTime;
+            CameraShake.shakeIndef();
             //Lectern.GetComponent<MeshRenderer>().material = Interacting;
         }
     }
