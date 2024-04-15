@@ -34,7 +34,7 @@ public class BoneThings : MonoBehaviour
     }
     public void RemoveBone()
     {
-        if (inRange && state>0)
+        if (state>0)
         {
             state--;
             UpdateDisplay();
