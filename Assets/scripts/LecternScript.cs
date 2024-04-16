@@ -18,6 +18,7 @@ public class LecternScript : MonoBehaviour
     {
         if (!win && fill >= 1) {
             win = true;
+            StartCoroutine(winstate());
         }
         if (distanceScript.distance < 0.8f)
         {
