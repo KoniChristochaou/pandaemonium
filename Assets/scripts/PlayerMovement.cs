@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         {
             right = false;
         }
-        rb.velocity = new Vector3(movementInp.x,0,movementInp.y).normalized*speed;
+        rb.linearVelocity = new Vector3(movementInp.x,0,movementInp.y).normalized*speed;
         pivotAnim.SetBool("right", right);
         playerAnim.SetBool("Moving", movementInp.sqrMagnitude > 0);
     }
